@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irmandade</title>
+    <link rel="icon" href="imagens/assembleia%20final%20form.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style> /* Configuração básica */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            color: #00FF00;
+            background-color: #000;
+            background-image: url('imagens/assembleia%20final%20form.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+        }
+
+        /* Header e navegação */
+        header {
+            text-align: center;
+            background-color: #111;
+            padding: 15px;
+        }
+
+        h1 {
+            color: #00FF00;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background-color: #222;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #00FF00;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            color: #FF4500;
+        }
+
+        /* Seções do conteúdo */
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 255, 0, 0.2);
+        }
+
+        h2, h3, h4, h5 {
+            color: #00FF00;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Links no conteúdo */
+        a {
+            color: #00FF00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #FF4500;
+        }
+
+        /* Rodapé */
+       /* Rodapé estilizado */
+/* Rodapé fixo estilizado */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #111;
+    color: #00FF00;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 2px solid #00FF00;
+    font-size: 1rem;
+    font-family: 'VT323', monospace;
+}
+
+/* Cria espaço para o rodapé fixo no final da página */
+body {
+    margin: 0;
+    padding-bottom: 60px; /* Altura do rodapé + um pouco de espaçamento */
+}
+
+/* Links no rodapé */
+footer a {
+    color: #00FF00;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FF4500;
+}
+
+
+        
+
+        /* Responsividade */
+        @media screen and (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            section {
+                width: 80%;
+            }
+        }
+
+        /* Estilo da seção de Informações Obtidas */
+       #informacoes {
+    font-family: 'VT323', monospace;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    border: 5px solid #ff6600;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px auto;
+    color: #33cc33;
+    overflow: auto;  /* Permite rolar o conteúdo caso ultrapasse a largura */
+}
+
+#informacoes h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 10px;
+}
+
+#informacoes h3 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ff6600;
+    padding-bottom: 5px;
+}
+
+#informacoes p {
+    white-space: normal;  /* Permite quebra de linha */
+    overflow-wrap: break-word;  /* Garante que palavras longas se quebrem corretamente */
+    width: 100%;
+    display: block;  /* Garante que o parágrafo ocupe a largura disponível e tenha o comportamento esperado */
+    border-right: 2px solid #33cc33;
+    animation: typing 3s steps(50) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Para animar o texto com digitação e permitir quebra de linha, podemos manter a animação, mas ajustar o comportamento do parágrafo */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+        }
+
+        /* Animações */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        #informacoes .informacao {
+            display: inline-block;
+            opacity: 0;
+            animation: revealText 2s forwards;
+        }
+
+        @keyframes revealText {
+            to { opacity: 1; }
+        }
+
+        .info-section {
+            margin-bottom: 15px;
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            padding: 10px;
+        }
+
+        .info-section button.toggle-button {
+            width: 100%;
+            background-color: #333;
+            color: #00FF00;
+            border: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .info-section button.toggle-button:hover {
+            background-color: #444;
+        }
+
+        .info-section .toggle-content {
+            display: none;
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-section .toggle-content.open {
+            display: block;
+            animation: slideDown 0.5s ease-out;
+        }
+
+@media screen and (max-width: 768px) {
+    /* Ajustar tamanho da fonte */
+    h1 {
+        font-size: 2rem; /* Diminuir tamanho do título */
+    }
+
+    p {
+        font-size: 1rem; /* Diminuir fonte dos parágrafos */
+        line-height: 1.5; /* Aumentar o espaçamento entre linhas */
+    }
+
+    nav ul li {
+        display: block; /* Coloca os itens do menu em linha única */
+        margin-bottom: 10px;
+    }
+
+    section {
+        width: 90%; /* Reduz a largura das seções */
+        padding: 10px; /* Reduz espaçamentos para telas menores */
+    }
+}
+p, h1, h2, h3, h4, h5 {
+    word-wrap: break-word;      /* Permite quebra automática de palavras */
+    overflow-wrap: break-word; /* Nova sintaxe para maior compatibilidade */
+    hyphens: auto;             /* Adiciona hifens onde necessário */
+}
+.sua-classe {
+  word-wrap: break-word; /* Para navegadores antigos */
+  overflow-wrap: break-word; /* Para navegadores mais recentes */
+}
+/* Definindo o tamanho do contêiner pai de todos os elementos principais */
+main, section, p, div {
+    max-width: 100%;            /* Garante que o conteúdo não ultrapasse a largura da tela */
+    width: 100%;                /* Certifica que eles ocupem toda a largura disponível */
+    box-sizing: border-box;     /* Inclui padding e bordas dentro da largura */
+    word-wrap: break-word;      /* Quebra palavras que não cabem no conteúdo */
+    overflow-wrap: break-word;  /* Para maior compatibilidade com navegadores */
+}
+
+/* Asegura que não haja quebras indesejadas nos parágrafos */
+p {
+    white-space: normal;  /* Permite que o conteúdo se quebre corretamente no parágrafo */
+}
+
+/* Formatação das listas (especificamente itens de menu) */
+nav ul li {
+    display: block;        /* Modifica para um formato de bloco para controle de espaçamento */
+    margin-bottom: 10px;    /* Ajusta o espaçamento entre os itens da lista */
+}
+
+nav ul li a {
+    white-space: normal;    /* Permite quebra de linha dentro dos links, se necessário */
+}
+
+/* Melhorando os contêineres para quebra de palavras longas e melhorias no layout */
+h1, h2, h3, h4, h5, p {
+    white-space: normal;  /* Garante que títulos e textos possam quebrar palavras ao máximo */
+}
+
+/* Corrige a navegação para que ela ocupe largura total, caso necessário */
+nav ul {
+    padding-left: 0;       /* Remove os paddings padrões do ul */
+    list-style: none;      /* Remove os pontos/ícones da lista, caso haja */
+}
+
+/* Contêiner section (usuário pode precisar restringir larguras em algumas telas pequenas) */
+section {
+    max-width: 100%;       /* Define a largura máxima como a largura da tela */
+    padding: 20px;         /* Controle de padding para espaçamento de conteúdo */
+    background-color: rgba(0, 0, 0, 0.7);  /* Fundo ligeiramente semitransparente */
+    border-radius: 15px;   /* Bordas arredondadas para dar um ar mais limpo */
+    box-shadow: 0px 4px 6px rgba(0, 255, 0, 0.2); /* Sombra para dar profundidade */
+}
+
+/* Adicionando algumas regras de ajuste responsivo, conforme necessário */
+@media (max-width: 768px) {
+    /* Para telas pequenas, tentamos garantir que os contêineres não ultrapassem a tela */
+    main, section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav ul {
+        padding-left: 0;
+        display: flex;        /* Usa flexbox para garantir que os itens fiquem responsivos */
+        flex-direction: column;  /* Empilha as opções de menu verticalmente */
+    }
+
+    nav ul li {
+        margin-bottom: 5px;
+    }
+}
+/* styles.css */
+
+
+#popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo com opacidade */
+    padding-top: 100px;
+    text-align: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button:hover {
+    background-color: #218838;
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+#passwordSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#password {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #007766;
+    border-radius: 25px;
+    outline: none;
+    background: linear-gradient(145deg, #1a2a34, #0f2026);
+    color: #80ffaa;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 128, 85, 0.2),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+#password:focus {
+    border-color: #1affd6;
+    box-shadow: 0 5px 10px rgba(0, 255, 210, 0.5),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#submitPassword {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a2024;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(145deg, #007f4f, #005c37);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(30, 60, 70, 0.4),
+                inset 0 -3px 5px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+#submitPassword:hover {
+    background: linear-gradient(145deg, #00b276, #008c59);
+    box-shadow: 0 8px 20px rgba(40, 70, 85, 0.6),
+                inset 0 -3px 5px rgba(0, 0, 0, 0.8);
+}
+
+#error-message {
+    font-size: 14px;
+    text-align: center;
+    color: #ff6666;
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Efeito de shake para mensagens de erro */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+
+
+</style>
+</head>
+
+<body>
+<button id="doeBtn">Doe para a Irmandade</button>
+
+<!-- Pop-up -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h2>Doe para a Irmandade</h2>
+        <p>Contribua para apoiar a nossa causa e ajudar a irmandade a crescer. Use a chave PIX abaixo para realizar sua doação.</p>
+        <p><strong>Chave PIX:</strong> miguedu333666@gmail.com</p>
+        <p>Ou clique no botão abaixo para copiar a chave:</p>
+        <button id="copyKeyBtn">Copiar chave PIX</button>
+    </div>
+</div>
+
+
+  
+    <header>
+        <h1>O site da irmandade</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#informacoes">Informações Obtidas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Este é um site privado, disponível apenas para membros da irmandade, fundada por Miguel Antonio, Marcos Gabriel, Vinicius e Eliezer em 2024. Nosso objetivo é alcançar a autossuficiência e a prosperidade coletiva através de projetos estratégicos e investimentos a longo prazo.</p>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre</h2>
+            <p><strong>A Irmandade</strong> é uma organização secreta, composta por jovens membros com objetivos a longo prazo, cujo principal foco é alcançar autossuficiência e prosperidade coletiva por meio de projetos estratégicos e investimentos bem planejados.</p>
+
+            <h3>Visão</h3>
+            <p>A irmandade se apresenta como uma união de pessoas com valores compartilhados, desejando promover avanços em suas vidas enquanto transformam positivamente a sociedade e expandem suas influências. A visão é se consolidar como um grupo relevante e inovador, reconhecido pela sua organização e impacto nas áreas em que atua.</p>
+
+            <h4>Projeto Principal: NEXUS</h4>
+            <p>O projeto NEXUS é o coração estratégico da irmandade. Ele é um plano de longo prazo que reúne objetivos financeiros, sociais e organizacionais.</p>
+
+            <h5>Fases e objetivos principais:</h5>
+            <ul>
+                <li><strong>Arrecadação Inicial:</strong> Os membros contribuem financeiramente semanalmente para gerar um fundo comum.</li>
+                <li><strong>Investimentos:</strong> Parte desse capital inicial é aplicado em mercados financeiros, como ações (ex.: IVVB11 e BOVA11) e criptomoedas (ex.: Bitcoin e Ethereum).</li>
+                <li><strong>Construção da Sede:</strong> Uma meta de médio prazo é a construção de uma sede para a irmandade, consolidando um espaço físico para suas operações.</li>
+                <li><strong>Monopólios Locais:</strong> O grupo pretende estabelecer monopólios em setores chave, como Tecnologia da Informação (TI), mercado e mecânica, garantindo preços acessíveis à comunidade enquanto expandem sua relevância e recursos financeiros.</li>
+            </ul>
+
+            <h4>Anéis de Identificação:</h4>
+            <p>Os membros serão reconhecidos por anéis únicos que simbolizam a lealdade e a integração ao grupo.</p>
+
+            <h3>Hierarquia e Cooperação:</h3>
+            <p>A irmandade não foca em posições hierárquicas rígidas. O sucesso depende da contribuição igualitária e do comprometimento de cada participante. A autossuficiência é incentivada: os próprios membros assumem papéis em futuras operações, evitando dependência de terceiros.</p>
+
+            <h4>Princípios e Valores</h4>
+            <p>Discrição: Os planos e objetivos permanecem restritos aos membros.<br>
+               Trabalho em Equipe: Cada membro contribui ativamente com habilidades e recursos.<br>
+               Resiliência e Foco: Projetos têm duração de anos, com metas que demandam paciência e dedicação.<br>
+               Inovação: Novas ideias, tecnologias e mercados são explorados para trazer soluções efetivas.
+        </section>
+
+        <section id="informacoes">
+    <div class="info-section">
+        <button class="toggle-button">Revelar mais sobre o Projeto</button>
+        <div class="toggle-content">
+            <h2>Detalhes do Projeto NEXUS</h2>
+            <p>O objetivo do projeto NEXUS é acumular ativos e recursos, gerando renda e apoiando a criação de uma sociedade sustentada por monopólios e prosperidade coletiva...</p>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <button class="toggle-button">Histórico de Contribuições</button>
+        <div class="toggle-content">
+            <h2>Histórico de Contribuições</h2>
+            <p>Nenhum membro contribuiu ainda.</p>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <button class="toggle-button">Informações Pessoais</button>
+        <div class="toggle-content">
+            <h2>Informações Pessoais</h2>
+
+            <div id="passwordSection" style="margin-top: 20px;">
+                <input type="password" id="password" placeholder="Digite a senha">
+                <button id="submitPassword">Verificar</button>
+                <div id="error-message" style="display: none; color: red;">Senha incorreta!</div>
+            </div>
+
+            <!-- Divisão que será exibida após a senha correta -->
+            <div id="informacoesPessoais" style="display: none;">
+                <h2>Informações Pessoais</h2>
+                <p>Nome: Miguel Antonio</p>
+                <p>Data de nascimento: 04/04/2010</p>
+				<p>cargo:lider supremo</p>
+				<p>Nome: Marcos Gabriel</p>
+                <p>Data de nascimento: 28/07/2009</p>
+				<p>cargo:lider</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <section id="contato">
+    <h2>Contato</h2>
+    <p>Se você for um membro e tiver dúvidas, entre em contato por meio de nossos canais secretos.</p>
+    <p>📞 <strong>Telefone:</strong> <a href="tel:+5512981936553">(12) 98193-6553</a></p>
+    <p>✉️ <strong>E-mail:</strong> <a href="mailto:suportefraternitatis@gmail.com">suportefraternitatis@gmail.com</a></p>
+</section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Irmandade | Todos os direitos reservados.</p>
+    </footer>
+	<script>document.addEventListener("DOMContentLoaded", function() {
+    // Primeiro Script - Botões de Informação
+    const buttons = document.querySelectorAll('.toggle-button'); // Selecionando todos os botões
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const content = this.nextElementSibling; // Pegando a div que segue o botão
+
+            // Alternar a classe 'open' para mostrar ou ocultar a div
+            if (content) {
+                content.classList.toggle('open');
+            }
+        });
+    });
+
+    // Efeito de escrita quando a seção se torna visível
+    const infoSections = document.querySelectorAll('.typed');
+    
+    function writeOnScroll() {
+        const infoSection = document.querySelector('#informacoes');
+        const infoPosition = infoSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (infoPosition <= windowHeight * 0.9 && infoPosition >= 0) {
+            // Se a seção de informações estiver visível na tela, começa o efeito de digitação
+            infoSections.forEach(function(section) {
+                section.classList.add('typed'); // Inicia o efeito de digitação
+            });
+        }
+    }
+
+    // Adiciona um evento para detecção de rolagem
+    window.addEventListener('scroll', writeOnScroll);
+    
+    // Chama a função quando a página carrega para garantir que o efeito seja aplicado caso a seção já esteja visível
+    writeOnScroll();
+
+    // Segundo Script - Pop-up de Doação
+    var popup = document.getElementById("popup");
+    var closeBtn = document.getElementById("closeBtn");
+    var donateBtn = document.getElementById("donateBtn");
+    var donateAmount = document.getElementById("donationAmount");
+
+    // Ao clicar no botão "Doe para a Irmandade", abre o pop-up
+    document.getElementById("doeBtn").onclick = function() {
+        popup.style.display = "block";
+    };
+
+    // Ao clicar no "X" ou fora do pop-up, fecha o pop-up
+    closeBtn.onclick = function() {
+        popup.style.display = "none";
+    };
+
+    // Fecha o pop-up se o usuário clicar fora do conteúdo do pop-up
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    };
+});
+document.getElementById("copyKeyBtn").onclick = function() {
+    var keyText = "miguedu333666@gmail.com"; // Chave PIX
+    navigator.clipboard.writeText(keyText).then(function() {
+        alert("Chave PIX copiada!");
+    }, function() {
+        alert("Falha ao copiar a chave PIX.");
+    });
+};
+document.getElementById("submitPassword").addEventListener("click", function () {
+    const passwordInput = document.getElementById("password").value;
+    const errorMessage = document.getElementById("error-message");
+    const infoSection = document.getElementById("informacoesPessoais");
+
+    if (passwordInput === "04042010") {
+        errorMessage.style.display = "none";
+        infoSection.style.display = "block"; // Exibe a divisão com as informações pessoais
+    } else {
+        errorMessage.style.display = "block"; // Mostra a mensagem de erro
+        infoSection.style.display = "none";  // Garante que a seção não aparece com senha errada
+    }
+});
+
+</script>
+</body>
+</html>
